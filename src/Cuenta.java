@@ -1,4 +1,4 @@
-public abstract class Cuenta {
+public abstract class Cuenta implements IMostrable {
     private String nombreTitular;
     private double saldo;
     private int numeroCuenta;
@@ -26,6 +26,12 @@ public abstract class Cuenta {
 
     protected void setSaldo(double saldo) {
         this.saldo = saldo;
+    }
+
+    // --- CAMBIO: IMPLEMENTACION DE INTERFAZ ---
+    @Override
+    public void imprimir() {
+        System.out.println(">>> CUENTA: " + toString());
     }
 
     @Override
